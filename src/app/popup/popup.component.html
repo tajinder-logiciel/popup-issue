@@ -1,0 +1,47 @@
+<ion-content>
+  <ion-list>
+      <ion-radio-group name="sort-by-radio-group"
+      [(ngModel)]="filterSortingParams.sort_by">
+          <ion-list-header>
+              <ion-label>DATE</ion-label>
+          </ion-list-header>
+        
+          <ion-item *ngFor="let nearByOption of nearByFilterOptions.time">
+              <ion-label>{{nearByOption.text}}</ion-label>
+              <ion-radio
+              value="{{nearByOption.value}}"
+              (ionSelect)="nearByFilterChange('time', nearByOption)"
+              mode="ios" 
+              slot="start"></ion-radio>
+          </ion-item>
+        
+          <ion-list-header>
+              <ion-label>NAME</ion-label>
+          </ion-list-header>
+              
+          <ion-item *ngFor="let nearByOption of nearByFilterOptions.name">
+                  <ion-label>{{nearByOption.text}}</ion-label>
+                  <ion-radio
+                  value="{{nearByOption.value}}"
+                  (ionSelect)="nearByFilterChange('name', nearByOption)"
+                  mode="ios" 
+                  slot="start"></ion-radio>
+          </ion-item>
+      </ion-radio-group>
+      
+      <ion-radio-group name="near-by-radio-group"
+      [(ngModel)]="filterSortingParams.distance">
+          <ion-list-header>
+              <ion-label>NEARBY</ion-label>
+          </ion-list-header>
+          <ion-item *ngFor="let nearByOption of nearByFilterOptions.near">
+              <ion-label>{{nearByOption.text}}</ion-label>
+              <ion-radio
+              value="{{nearByOption.value}}"
+              (ionSelect)="nearByFilterChange('near', nearByOption)"
+              mode="ios" 
+              slot="start"></ion-radio>
+          </ion-item>
+      </ion-radio-group>
+  </ion-list>
+</ion-content>

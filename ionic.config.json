@@ -1,0 +1,7 @@
+{
+  "name": "popup Issue",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
